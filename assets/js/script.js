@@ -23,19 +23,83 @@ let appleY = 5;
 let xVelocity = 0;
 let yVelocity = 0;
 
+let score = 0;
+
 //game loop
 function drawGame() {
+     changeSnakePosition();
+     let result = isGameOver();
+     if (result) {
+         result;
+     }
+
     clearScreen();
-    changeSnakePosition();
     checkAppleCollision();
     drawApple();
     drawSnake();
+    drawscore();
     setTimeout(drawGame, 1000 / speed);
 }
 
+function isGameOver() {
+    let gameOver = false;
+  
+    if (yVelocity === 0 && xVelocity === 0) {
+        return false;
+    }
+  
+    //walls
+    if (headX < 0) {
+        gameOver = true;
+    } else if (headX === tileCount) {
+        gameOver = true;
+    } else if (headY < 0) {
+        gameOver = true;
+    } else if (headY === tileCount) {
+        gameOver = true;
+    }
+  
+    for (let i = 0; i < snakeParts.length; i++) {
+        let part = snakeParts[i];
+        if (part.x === headX && part.y === headY) {
+            gameOver = true;
+            break;
+        }
+    }
+  
+    if (gameOver) {
+        ctx.fillStyle = "white";
+        ctx.font = "50px Verdana";
+  
+        if (gameOver) {
+            ctx.fillStyle = "white";
+            ctx.font = "50px Verdana";
+  
+            var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop("0", " magenta");
+            gradient.addColorStop("0.5", "blue");
+            gradient.addColorStop("1.0", "red");
+            // Fill with gradient
+            ctx.fillStyle = gradient;
+  
+            ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
+        }
+  
+        ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
+    }
+  
+    return gameOver;
+}
+
+function drawscore() {
+    ctx.fillStyle = "black";
+    ctx.font = "10px Verdana";
+    ctx.fillText("Score " + score, canvas.width - 50, 10);
+}
+
 function clearScreen() {
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, canvas.Width, canvas.height);
+    ctx.fillStyle = "#f0ead6";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function drawSnake() {
@@ -71,6 +135,7 @@ function checkAppleCollision() {
         appleX = Math.floor(Math.random() * tileCount);
         appleY = Math.floor(Math.random() * tileCount);
         tailLength++;
+        score++;
     }
 }
 
