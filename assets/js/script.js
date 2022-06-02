@@ -15,7 +15,7 @@ let tileSize = canvas.width / tileCount - 2;
 let headX = 10;
 let headY = 10;
 const snakeParts = [];
-let tailLength = 3;
+let tailLength = 2;
 
 let appleX = 5;
 let appleY = 5;
@@ -35,14 +35,25 @@ function drawGame() {
 
 function clearScreen() {
     ctx.fillStyle = 'black';
-    ctx.fillRect(0,0,canvas.Width,canvas.height);
+    ctx.fillRect(0, 0, canvas.Width, canvas.height);
 }
 
 function drawSnake() {
+    
+    ctx.fillStyle = 'green';
+    for (let i = 0; i < snakeParts.length; i++) {
+        let part = snakeParts[i];
+        ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize)
+    }
+
+    snakeParts.push(new SnakePart(headX, headY));
+    while (snakeParts.length > tailLength) {
+        snakeParts.shift();
+    }
+
     ctx.fillStyle = 'darkgreen';
     ctx.fillRect(headX * tileCount, headY * tileCount, tileSize, tileSize);
 
-    ctx.fillStyle = 'green'
 }
 
 function changeSnakePosition() {
