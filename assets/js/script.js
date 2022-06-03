@@ -37,7 +37,26 @@ function drawGame() {
     checkAppleCollision();
     drawApple();
     drawSnake();
-    drawscore();
+    drawScore();
+    
+    // Speed difficulty increase
+    if (score > 6) {
+        speed = 10;
+    }
+
+    if (score > 12) {
+        speed = 13;
+    }
+
+    if (score > 16) {
+        speed = 16;
+    }
+
+    if (score > 26) {
+        speed = 18;
+    }
+
+
     setTimeout(drawGame, 1000 / speed);
 }
 
@@ -91,7 +110,7 @@ function isGameOver() {
     return gameOver;
 }
 
-function drawscore() {
+function drawScore() {
     ctx.fillStyle = "black";
     ctx.font = "10px Verdana";
     ctx.fillText("Score " + score, canvas.width - 50, 10);
