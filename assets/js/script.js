@@ -72,16 +72,33 @@ function drawGame() {
 function isGameOver() {
     let gameOver = false;
 
-    // Walls
+    if (yVelocity === 0 && xVelocity === 0) {
+        return false;
+    }
+
+    // Walls game over condition
     if (headX < 0) {
         gameOver = true;
-      } else if (headX === tileCount) {
+    } else if (headX === tileCount) {
         gameOver = true;
-      } else if (headY < 0) {
+    } else if (headY < 0) {
         gameOver = true;
-      } else if (headY === tileCount) {
+    } else if (headY === tileCount) {
         gameOver = true;
-      }
+    }
+
+    // Snake body game over condition
+    for (let i = 0; i < snakeParts.length; i++) {
+        let part = snakeParts[i];
+        if (part.x === headX && part.y === headY) {
+            gameOver = true;
+            break;
+        }
+    }
+
+    if (gameOver) {
+        alert('Game Over')
+    }
 
     return gameOver;
 }
