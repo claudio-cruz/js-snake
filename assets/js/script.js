@@ -104,10 +104,11 @@ function isGameOver() {
     return gameOver;
 }
 
+// Score counter
 function drawScore() {
     ctx.fillStyle = "black";
     ctx.font = "10px Verdana";
-    ctx.fillText("Score " + score, canvas.width - 50, 10);
+    document.getElementById('score-counter').innerHTML = 'Score:  ' + score;
 }
 
 function clearScreen() {

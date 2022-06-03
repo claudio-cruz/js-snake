@@ -23,6 +23,18 @@ body {
 
 /* Game area */
 #game-field {
-    background-color: whitesmoke;
     border: 4px solid black;
+}
+
+
+/* Score counter */
+#score-counter {
+    background-color: coral;
+    font-family: 'Bangers', cursive;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 30px;
 }
