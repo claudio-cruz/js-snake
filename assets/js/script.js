@@ -95,9 +95,10 @@ function isGameOver() {
             break;
         }
     }
-
+    // Game over alert and restart the game
     if (gameOver) {
-        alert('Game Over')
+        alert(`Game Over! \nYour score is ${score}`)
+        window.location.reload();
     }
 
     return gameOver;
