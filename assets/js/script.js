@@ -112,7 +112,7 @@ function drawScore() {
 }
 
 function clearScreen() {
-    ctx.fillStyle = "#f0ead6";
+    ctx.fillStyle = "#c4c3d0";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -139,9 +139,10 @@ function changeSnakePosition() {
     headY = headY + yVelocity;
 }
 
+//** Draw a apple on the canvas */
 function drawApple() {
-    ctx.fillStyle = 'red';
-    ctx.fillRect(appleX * tileCount, appleY * tileCount, tileSize, tileSize);
+    let appleImage = document.getElementById('apple-img');
+    ctx.drawImage(appleImage, appleX * tileCount, appleY * tileCount, tileSize, tileSize);
 }
 
 function checkAppleCollision() {
