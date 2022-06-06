@@ -67,7 +67,7 @@ function drawGame() {
 
 /*
  Game stops if the snake hits the walls
- or it's own body.
+ or its own body.
 */
 function isGameOver() {
     let gameOver = false;
@@ -97,9 +97,12 @@ function isGameOver() {
     }
     // Game over alert and restart the game
     if (gameOver) {
-        alert(`Game Over! \nYour score is ${score}`)
-        window.location.reload();
+        var modal = document.getElementById("gameOverModal");
+        
+        document.getElementById('modal-txt').innerHTML = 'Your score is  ' + score;
+        modal.style.display = "block";
     }
+    
 
     return gameOver;
 }

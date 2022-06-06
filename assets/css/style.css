@@ -1,4 +1,5 @@
 body {
+    font-family: 'Bangers', cursive;
     background-color: #50C878;
     justify-content: center;
     align-items: center;
@@ -39,7 +40,36 @@ body {
     font-size: 30px;
 }
 
-/* Remove apple-img from the main page */
+/* Hide apple-img from the main page */
 #apple-img {
     display: none;
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(32, 21, 17, 0.688); /* Fallback color */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: rgb(255, 127, 80);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 3px solid rgb(0, 0, 0);
+    width: 50%; /* Could be more or less, depending on screen size */
+    height: 20%;
+    text-align: center;
+  }
+
+  #modal-title {
+      font-size: 300%;
+      margin: 10px;
+  }
