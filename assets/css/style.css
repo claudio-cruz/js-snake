@@ -39,7 +39,7 @@ body {
     font-size: 30px;
 }
 
+/* Remove apple-img from the main page */
 #apple-img {
-    width: 5%;
-    height: 5%;
+    display: none;
 }
