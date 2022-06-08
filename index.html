@@ -15,8 +15,9 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
+
     <!-- Game title -->
-    <h1 id="header"> JS <img id="logo" src="assets/images/snake.png"></i>nake</h1>
+    <h1 id="header"> JS <img id="logo" src="assets/images/snake.png" alt="">nake</h1>
 
     <!-- Game field -->
     <canvas id="game-field" width="400" height="400"></canvas>
@@ -24,22 +25,21 @@
     <!-- Score counter -->
     <p id="score-counter"></p>
 
-    <!-- Snake food image (apple) -->
-    <img src="assets/images/apple-logo.png" id="apple-img">
+    <!-- Snake food image (apple, hidden) -->
+    <img src="assets/images/apple-logo.png" id="apple-img" alt="">
 
-    <script src="assets/js/script.js"></script>
-    
     <!-- Game over modal -->
     <div id="gameOverModal" class="modal">
 
-    <!-- Modal content -->
+        <!-- Modal content -->
         <div class="modal-content">
-        <h2 id="modal-title">Game Over!</h2>
-        <p id="modal-txt"></p>
-        <input type="button" id="restart-btn" value="Restart Game" onClick="document.location.reload(true)">
+            <h2 id="modal-title">Game Over!</h2>
+            <p id="modal-txt"></p>
+            <input type="button" id="restart-btn" value="Restart Game" onClick="document.location.reload(true)">
         </div>
 
     </div>
 
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
