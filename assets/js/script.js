@@ -8,6 +8,7 @@ class SnakePart {
     }
 }
 
+// Defoult snake speed
 let speed = 7;
 
 let tileCount = 20;
@@ -17,11 +18,9 @@ let headY = 10;
 const snakeParts = [];
 let tailLength = 2;
 
+// Apple's initial position
 let appleX = 17;
 let appleY = 4;
-
-let inputsXVelocity = 0;
-let inputsYVelocity = 0;
 
 let xVelocity = 0;
 let yVelocity = 0;
@@ -30,8 +29,6 @@ let score = 0;
 
 //game loop
 function drawGame() {
-    xVelocity = inputsXVelocity;
-    yVelocity = inputsYVelocity;
 
     changeSnakePosition();
     let result = isGameOver();
@@ -124,7 +121,7 @@ function drawSnake() {
     ctx.fillStyle = 'green';
     for (let i = 0; i < snakeParts.length; i++) {
         let part = snakeParts[i];
-        ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize)
+        ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
     }
 
     snakeParts.push(new SnakePart(headX, headY));
@@ -163,30 +160,30 @@ document.body.addEventListener('keydown', keyDown);
 function keyDown(event) {
     //up
     if(event.keyCode == 38){
-        if (inputsYVelocity  == 1) return;
-        inputsYVelocity  = -1;
-        inputsXVelocity  = 0;
+        if (yVelocity  == 1) return;
+        yVelocity  = -1;
+        xVelocity  = 0;
     }
 
     //down
     if(event.keyCode == 40){
-        if (inputsYVelocity  == -1) return;
-        inputsYVelocity  = 1;
-        inputsXVelocity  = 0;
+        if (yVelocity  == -1) return;
+        yVelocity  = 1;
+        xVelocity  = 0;
     }
 
     //left
     if(event.keyCode == 37){
-        if (inputsXVelocity == 1) return;
-        inputsYVelocity = 0;
-        inputsXVelocity = -1;
+        if (xVelocity == 1) return;
+        yVelocity = 0;
+        xVelocity = -1;
     }
 
     //right
     if(event.keyCode == 39){
-        if (inputsXVelocity == -1) return;
-        inputsYVelocity = 0;
-        inputsXVelocity = 1;
+        if (xVelocity == -1) return;
+        yVelocity = 0;
+        xVelocity = 1;
     }
 }
 
