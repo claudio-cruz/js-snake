@@ -86,6 +86,21 @@ body {
     font-size: 20px;
 }
 
+#control-buttons {
+    
+}
+
+.touch-buttons {
+    width: 40px;
+    height: 40px;
+    
+}
+
+#move-up-btn {
+    display: flex;
+    margin: auto;
+}
+
 /* Media querie for small screens lower then 410px*/
 @media (max-width: 410px) {
     
