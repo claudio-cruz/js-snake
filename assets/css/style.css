@@ -85,3 +85,22 @@ body {
 #restart-btn:hover {
     font-size: 20px;
 }
+
+/* Media querie for small screens lower then 410px*/
+@media (max-width: 410px) {
+    
+    #game-field {
+        width: 280px;
+        height: 280px;
+    }
+
+    #modal-title {
+        font-size: 150%;
+        margin: 5px;
+    }
+
+    .modal-content {
+        margin: 35% auto;
+        padding: 5px;
+    }
+}
