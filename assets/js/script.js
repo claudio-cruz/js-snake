@@ -30,6 +30,9 @@ let yVelocity = 0;
 
 let score = 0;
 
+const appleSound = new Audio('assets/sound/apple-sound.mp3')
+const gameOverSound = new Audio('assets/sound/game-over-sound.wav')
+
 /** 
  * Game loop.
  */
@@ -103,6 +106,8 @@ function isGameOver() {
         
         document.getElementById('modal-txt').innerHTML = 'Your score is  ' + score;
         modal.style.display = "block";
+        
+        gameOverSound.play();
     }
 
     return gameOver;
@@ -166,6 +171,7 @@ function checkAppleCollision() {
         appleY = Math.floor(Math.random() * tileCount);
         tailLength++;
         score++;
+        appleSound.play();
     }
 }
 
