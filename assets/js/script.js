@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const canvas = document.getElementById('game-field');
 const ctx = canvas.getContext('2d');
 
