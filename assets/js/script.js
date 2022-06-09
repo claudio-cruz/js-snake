@@ -211,28 +211,28 @@ function keyDown(event) {
 }
 
 /** Touch screen move up */
-function moveUp() {
+document.getElementById("move-up-btn").onclick = function moveUp() {
     if (yVelocity  == 1) return;
     yVelocity  = -1;
     xVelocity  = 0; 
 }
 
 /** Touch screen move down */
-function moveDown() {
+document.getElementById("move-down-btn").onclick = function moveDown() {
     if (yVelocity  == -1) return;
     yVelocity  = 1;
     xVelocity  = 0; 
 }
 
 /** Touch screen move left */
-function moveLeft() {
+document.getElementById("move-left-btn").onclick =  function moveLeft() {
     if (xVelocity == 1) return;
     yVelocity = 0;
     xVelocity = -1;
 }
 
 /** Touch screen move right */
-function moveRight() {
+document.getElementById("move-right-btn").onclick = function moveRight() {
     if (xVelocity == -1) return;
     yVelocity = 0;
     xVelocity = 1; 
