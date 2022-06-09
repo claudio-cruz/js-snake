@@ -86,19 +86,23 @@ body {
     font-size: 20px;
 }
 
-#control-buttons {
-    
+/* Direction touch buttons */
+#control-buttons-div {
+    padding: 15px;
 }
 
 .touch-buttons {
-    width: 40px;
-    height: 40px;
-    
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    margin: 5px;
+    background-color: whitesmoke;
+    border: 2px solid black;
 }
 
 #move-up-btn {
-    display: flex;
-    margin: auto;
+    display: block;
+    margin: 5px auto;
 }
 
 /* Media querie for small screens lower then 410px*/
