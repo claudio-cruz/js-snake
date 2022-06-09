@@ -21,6 +21,11 @@ body {
     box-shadow: black 20px 10px 50px;
 }
 
+#logo {
+    width: 27px;
+    height: 27px;
+}
+
 /* Game area */
 #game-field {
     border: 4px solid black;
