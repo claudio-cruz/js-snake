@@ -30,6 +30,7 @@ let yVelocity = 0;
 
 let score = 0;
 
+// Game sound effects.
 const appleSound = new Audio('assets/sound/apple-sound.mp3')
 const gameOverSound = new Audio('assets/sound/game-over-sound.wav')
 
@@ -207,6 +208,34 @@ function keyDown(event) {
         yVelocity = 0;
         xVelocity = 1;
     }
+}
+
+/** Touch screen move up */
+function moveUp() {
+    if (yVelocity  == 1) return;
+    yVelocity  = -1;
+    xVelocity  = 0; 
+}
+
+/** Touch screen move down */
+function moveDown() {
+    if (yVelocity  == -1) return;
+    yVelocity  = 1;
+    xVelocity  = 0; 
+}
+
+/** Touch screen move left */
+function moveLeft() {
+    if (xVelocity == 1) return;
+    yVelocity = 0;
+    xVelocity = -1;
+}
+
+/** Touch screen move right */
+function moveRight() {
+    if (xVelocity == -1) return;
+    yVelocity = 0;
+    xVelocity = 1; 
 }
 
 drawGame();

@@ -28,6 +28,13 @@
     <!-- Snake food image (apple, hidden) -->
     <img src="assets/images/apple-logo.png" id="apple-img" alt="">
 
+    <div id='control-buttons'>
+        <button id="move-up-btn" onclick="moveUp()"><i class="fa-solid fa-arrow-up"></i></button>
+        <button id="move-left-btn" onclick="moveLeft()"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="move-right-btn" onclick="moveRight()"><i class="fa-solid fa-arrow-right"></i></button>
+        <button id="move-down-btn" onclick="moveDown()"><i class="fa-solid fa-arrow-down"></i></button>
+    </div>
+
     <!-- Game over modal -->
     <div id="gameOverModal" class="modal">
 
@@ -39,6 +46,9 @@
         </div>
 
     </div>
+
+    <!-- Font awesome script -->
+    <script src="https://kit.fontawesome.com/c97220b22d.js" crossorigin="anonymous"></script>
 
     <script src="assets/js/script.js"></script>
 </body>
